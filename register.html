@@ -1,67 +1,73 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-    <head>
-        <meta charset="UTF-8" />
-        <title>註冊</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
-        <style>
-            body {
-                background-color: #f0f9ff; /* 輕鬆的淺藍色背景 */
-                font-family: 'Comic Sans MS', sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-            }
+<html lang="en">
 
-            #registerForm {
-                background-color: white;
-                padding: 20px;
-                border-radius: 20px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                width: 350px;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+    <style>
+        body {
+            background-color: #f0f9ff;
+            /* Relaxing light blue background */
+            font-family: 'Comic Sans MS', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-            button {
-                background-color: #ffcf33; /* 鴨嘴巴的黃色 */
-                color: white;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 10px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
+        #registerForm {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
 
-            button:hover {
-                background-color: #ffb700;
-            }
+        button {
+            background-color: #ffcf33;
+            /* Duck beak yellow */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-            h1 {
-                color: #ff6347;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>🦆 註冊新帳號</h1>
-        <form id="registerForm">
-            <div class="mb-4">
-                <label class="block text-gray-700 mb-2">使用者名稱：</label>
-                <input type="text" id="username" required class="w-full px-3 py-2 border rounded" />
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 mb-2">密碼：</label>
-                <input type="password" id="password" required class="w-full px-3 py-2 border rounded" />
-            </div>
-            <button type="submit" class="w-full">註冊</button>
-        </form>
+        button:hover {
+            background-color: #ffb700;
+        }
 
-        <p id="message" class="mt-4 text-center"></p>
+        h1 {
+            color: #ff6347;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
 
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="register.js"></script>
-    </body>
+<body>
+    <h1>🦆 Register New Account</h1>
+    <form id="registerForm">
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Username:</label>
+            <input type="text" id="username" required class="w-full px-3 py-2 border rounded" />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Password:</label>
+            <input type="password" id="password" required class="w-full px-3 py-2 border rounded" />
+        </div>
+        <button type="submit" class="w-full">Register</button>
+    </form>
+
+    <p id="message" class="mt-4 text-center"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="register.js"></script>
+    <script src="config.js"></script>
+</body>
+
 </html>

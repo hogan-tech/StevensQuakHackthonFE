@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>焦慮統計圖表</title>
+    <title>Anxiety Statistics Chart</title>
     <meta charset="UTF-8">
-    <!-- 引入 ECharts -->
+    <!-- Load ECharts -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-    <!-- 此处需确保你的主题注册代码也被引入 -->
+    <!-- Make sure your theme registration code is also included if needed -->
     <style>
-        body { text-align: center; font-family: Arial, sans-serif; margin: 40px auto; }
-        .chart-container { margin: auto; width: 500px; height: 300px; }
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+        }
+
+        .chart-container {
+            margin: auto;
+            width: 500px;
+            height: 300px;
+        }
+
         .tab {
             display: inline-block;
             margin: 10px;
@@ -19,6 +30,7 @@
             background-color: #f5f5f5;
             color: #333;
         }
+
         .tab.active {
             background-color: #333;
             color: #fff;
@@ -26,15 +38,17 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>焦慮統計圖表</h1>
+    <h1>Anxiety Statistics Chart</h1>
     <div>
-        <span class="tab active" id="tab-weekly">每週</span>
-        <span class="tab" id="tab-daily">今日</span>
+        <span class="tab active" id="tab-weekly">Weekly</span>
+        <span class="tab" id="tab-daily">Today</span>
     </div>
     <div class="chart-container">
         <div id="chart" style="width:100%; height:100%;"></div>
     </div>
     <script src="test2.js"></script>
 </body>
+
 </html>

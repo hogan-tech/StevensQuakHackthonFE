@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>焦慮次數追蹤器</title>
+    <title>Anxiety Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -19,7 +20,7 @@
             background: white;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 90%;
             max-width: 600px;
@@ -85,25 +86,24 @@
 
 <body>
     <div class="container">
-        <h1>焦慮次數追蹤器</h1>
-        <button
-            id="analysisBtn"
-            onclick="location.href='analysis.html'"
-            style="position: absolute; top: 80px; right: 20px"
-        >
+        <h1>Anxiety Tracker</h1>
+        <button id="analysisBtn" onclick="location.href='analysis.html'"
+            style="position: absolute; top: 80px; right: 20px">
             View Analysis
         </button>
         <button id="trackButton"></button>
-        <div id="counter">今日焦慮次數: 0</div>
+        <div id="counter">Today's Anxiety Count: 0</div>
 
         <div id="log">
-            <h3>記錄歷史</h3>
+            <h3>History Log</h3>
             <ul id="logList"></ul>
         </div>
 
-        <button class="clear-btn" id="clearLog">清除記錄</button>
+        <button class="clear-btn" id="clearLog">Clear Log</button>
     </div>
 
-    <script src="./prototype.js"></script>
+    <script src="prototype.js"></script>
+    <script src="config.js"></script>
 </body>
+
 </html>

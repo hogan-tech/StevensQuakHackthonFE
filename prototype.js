@@ -6,48 +6,48 @@ const counterDisplay = document.getElementById("counter");
 const logList = document.getElementById("logList");
 const clearLogButton = document.getElementById("clearLog");
 
-// 從本地存儲加載數據
+// Load data from local storage
 if (localStorage.getItem("anxietyCount")) {
-    count = parseInt(localStorage.getItem("anxietyCount"));
-    counterDisplay.textContent = `今日焦慮次數: ${count}`;
+  count = parseInt(localStorage.getItem("anxietyCount"));
+  counterDisplay.textContent = `Today's Anxiety Count: ${count}`;
 }
 
 if (localStorage.getItem("anxietyLog")) {
-    logList.innerHTML = localStorage.getItem("anxietyLog");
+  logList.innerHTML = localStorage.getItem("anxietyLog");
 }
 
-// 處理按鈕點擊
+// Handle track button click
 trackButton.addEventListener("click", function () {
-    count++;
-    counterDisplay.textContent = `今日焦慮次數: ${count}`;
+  count++;
+  counterDisplay.textContent = `Today's Anxiety Count: ${count}`;
 
-    // 記錄時間戳
-    const now = new Date();
-    const timeString = now.toLocaleTimeString();
-    const dateString = now.toLocaleDateString();
+  // Record timestamp
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  const dateString = now.toLocaleDateString();
 
-    const logItem = document.createElement("li");
-    logItem.textContent = `${dateString} ${timeString}`;
-    logList.prepend(logItem);
+  const logItem = document.createElement("li");
+  logItem.textContent = `${dateString} ${timeString}`;
+  logList.prepend(logItem);
 
-    // 保存到本地存儲
-    localStorage.setItem("anxietyCount", count);
-    localStorage.setItem("anxietyLog", logList.innerHTML);
+  // Save to local storage
+  localStorage.setItem("anxietyCount", count);
+  localStorage.setItem("anxietyLog", logList.innerHTML);
 
-    // 切換按鈕圖案（短暫效果）
-    trackButton.style.backgroundImage = "url('./images/duck_pressed.png')";
-    setTimeout(() => {
-        trackButton.style.backgroundImage = "url('./images/duck_normal.png')";
-    }, 200);
+  // Change button image briefly for visual feedback
+  trackButton.style.backgroundImage = "url('./images/duck_pressed.png')";
+  setTimeout(() => {
+    trackButton.style.backgroundImage = "url('./images/duck_normal.png')";
+  }, 200);
 });
 
-// 清除紀錄功能
+// Clear log functionality
 clearLogButton.addEventListener("click", function () {
-    count = 0;
-    counterDisplay.textContent = `今日焦慮次數: 0`;
-    logList.innerHTML = "";
+  count = 0;
+  counterDisplay.textContent = `Today's Anxiety Count: 0`;
+  logList.innerHTML = "";
 
-    // 清除本地存儲
-    localStorage.removeItem("anxietyCount");
-    localStorage.removeItem("anxietyLog");
+  // Clear local storage
+  localStorage.removeItem("anxietyCount");
+  localStorage.removeItem("anxietyLog");
 });
