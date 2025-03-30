@@ -1,14 +1,12 @@
 $(function () {
     const user = JSON.parse(localStorage.getItem("loggedInUser"));
     if (user && user.userName) {
-        // User is already logged in, redirect to the main page
+        // The user is already logged in, redirect to the main page
         window.location.href = "prototype.html";
         return;
     }
-    
     $("#loginForm").on("submit", function (e) {
         e.preventDefault();
-        
         const userName = $("#username").val().trim();
         const password = $("#password").val().trim();
 
@@ -18,7 +16,7 @@ $(function () {
                 password,
             })
             .then(function (res) {
-                // ✅ Save logged-in user information for use on other pages
+                // ✅ Store the logged-in user's information (for use on other pages)
                 localStorage.setItem("loggedInUser", JSON.stringify(res.data));
 
                 $("#message").text("Login successful, redirecting...").css("color", "green");

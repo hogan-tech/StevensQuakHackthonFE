@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Anxiety Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
             background: white;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 90%;
             max-width: 600px;
@@ -85,7 +86,7 @@
 
 <body>
     <div class="container">
-        <h1>Anxiety Tracker</h1>
+        <h1>焦慮次數追蹤器</h1>
         <button
             id="analysisBtn"
             onclick="location.href='analysis.html'"
@@ -97,13 +98,15 @@
         <div id="counter">Today's Anxiety Count: 0</div>
 
         <div id="log">
-            <h3>Log History</h3>
+            <h3>記錄歷史</h3>
             <ul id="logList"></ul>
         </div>
 
         <button class="clear-btn" id="clearLog">Clear Log</button>
     </div>
 
-    <script src="./prototype.js"></script>
+    <script src="prototype.js"></script>
+    <script src="config.js"></script>
 </body>
+
 </html>
