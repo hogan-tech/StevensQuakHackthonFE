@@ -1,6 +1,8 @@
+
 let chart;
 const USE_MOCK = false;; // 切换为 false 后可接真实 API
 let conversationHistory = [];
+
 // const FIXED_DATE = '2025-03-29';
 if (!localStorage.getItem("loggedInUser")) {
     localStorage.setItem("loggedInUser", JSON.stringify({ userName: "test" }));
