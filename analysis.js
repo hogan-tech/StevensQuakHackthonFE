@@ -5,8 +5,7 @@ let conversationHistory = [];
 
 // const FIXED_DATE = '2025-03-29';
 if (!localStorage.getItem("loggedInUser")) {
-    localStorage.setItem("loggedInUser", JSON.stringify({ userName: "test" }));
-    console.log("⚠️ 测试中使用 mock 用户: wesley");
+    window.location.href = "login.html";
 }
 
 const MOCK_INPUT_DATA = [
@@ -120,8 +119,6 @@ async function fetchAnxietyData(type) {
     }
 }
 
-
-
 async function loadWeeklyChart() {
     setActiveTab('tab-weekly');
     const inputData = await fetchAnxietyData("sevenDays");
@@ -174,9 +171,6 @@ async function loadDailyChart() {
     const counts = allHours.map(hour => hourlyCounts[hour]);
     renderEChart(allHours, counts, 'Today Hourly Anxiety Count');
 }
-
-
-
 
 
 document.getElementById('tab-weekly').addEventListener('click', loadWeeklyChart);
