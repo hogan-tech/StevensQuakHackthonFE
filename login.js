@@ -1,12 +1,14 @@
 $(function () {
     const user = JSON.parse(localStorage.getItem("loggedInUser"));
     if (user && user.userName) {
-        // 使用者已登入，直接導向主頁
+        // User is already logged in, redirect to the main page
         window.location.href = "prototype.html";
         return;
     }
+    
     $("#loginForm").on("submit", function (e) {
         e.preventDefault();
+        
         const userName = $("#username").val().trim();
         const password = $("#password").val().trim();
 
@@ -16,17 +18,17 @@ $(function () {
                 password,
             })
             .then(function (res) {
-                // ✅ 儲存登入使用者資訊（供其他頁面使用）
+                // ✅ Save logged-in user information for use on other pages
                 localStorage.setItem("loggedInUser", JSON.stringify(res.data));
 
-                $("#message").text("登入成功，導向中...").css("color", "green");
+                $("#message").text("Login successful, redirecting...").css("color", "green");
 
                 setTimeout(function () {
-                    window.location.href = "./prototype.html"; // 轉跳到焦慮追蹤頁
+                    window.location.href = "./prototype.html"; // Redirect to the anxiety tracking page
                 }, 1000);
             })
             .catch(function (err) {
-                const msg = err.response?.data?.error || "登入失敗";
+                const msg = err.response?.data?.error || "Login failed";
                 $("#message").text(msg).css("color", "red");
             });
     });
