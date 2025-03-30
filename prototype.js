@@ -71,3 +71,10 @@ clearLogButton.addEventListener("click", function () {
     localStorage.removeItem("anxietyCount");
     localStorage.removeItem("anxietyLog");
 });
+
+const logoutBtn = document.getElementById("logoutBtn");
+logoutBtn.addEventListener("click", function () {
+    localStorage.removeItem("loggedInUser");
+    alert("You have been logged out.");
+    window.location.href = "login.html";
+});
