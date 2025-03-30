@@ -21,6 +21,8 @@ $(function () {
             .then(function (res) {
                 // ✅ Store the logged-in user's information (for use on other pages)
                 localStorage.setItem("loggedInUser", JSON.stringify(res.data));
+                const userName = localStorage.getItem("loggedInUser");
+                console.log("userName : " + userName);
 
                 $("#message")
                     .text("Login successful, redirecting...")
@@ -28,7 +30,7 @@ $(function () {
 
                 setTimeout(function () {
                     window.location.href = "./prototype.html"; // Redirect to the anxiety tracking page
-                }, 1000);
+                }, 8000);
             })
             .catch(function (err) {
                 const msg = err.response?.data?.error || "Login failed";
