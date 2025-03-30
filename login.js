@@ -11,15 +11,20 @@ $(function () {
         const password = $("#password").val().trim();
 
         axios
-            .post("http://localhost:3000/users/login", {
-                userName,
-                password,
-            })
+            .post(
+                "https://desolate-tor-24628-0ba2463868a2.herokuapp.com/users/login",
+                {
+                    userName,
+                    password,
+                }
+            )
             .then(function (res) {
                 // ✅ Store the logged-in user's information (for use on other pages)
                 localStorage.setItem("loggedInUser", JSON.stringify(res.data));
 
-                $("#message").text("Login successful, redirecting...").css("color", "green");
+                $("#message")
+                    .text("Login successful, redirecting...")
+                    .css("color", "green");
 
                 setTimeout(function () {
                     window.location.href = "./prototype.html"; // Redirect to the anxiety tracking page

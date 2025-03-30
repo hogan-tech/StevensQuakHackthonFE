@@ -11,10 +11,13 @@ $(function () {
         const password = $("#password").val().trim();
 
         axios
-            .post("http://localhost:3000/users/register", {
-                userName,
-                password,
-            })
+            .post(
+                "https://desolate-tor-24628-0ba2463868a2.herokuapp.com/users/register",
+                {
+                    userName,
+                    password,
+                }
+            )
             .then(function (res) {
                 $("#message")
                     .text("Registration successful! Please log in. ")
@@ -25,7 +28,9 @@ $(function () {
                 }, 1000);
             })
             .catch(function (err) {
-                const msg = err.response?.data?.error || "Registration failed. Please try again.";
+                const msg =
+                    err.response?.data?.error ||
+                    "Registration failed. Please try again.";
                 $("#message").text(msg).css("color", "red");
             });
     });

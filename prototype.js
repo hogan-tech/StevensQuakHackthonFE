@@ -11,26 +11,45 @@ if (localStorage.getItem("anxietyCount")) {
 }
 
 if (localStorage.getItem("anxietyLog")) {
-  logList.innerHTML = localStorage.getItem("anxietyLog");
+    logList.innerHTML = localStorage.getItem("anxietyLog");
 }
 
 // Handle button click
-trackButton.addEventListener("click", function () {
+trackButton.addEventListener("click", async function () {
     count++;
     counterDisplay.textContent = `Today's Anxiety Count: ${count}`;
 
     // Record timestamp
     const now = new Date();
-    const timeString = now.toLocaleTimeString();
-    const dateString = now.toLocaleDateString();
+    const timeString = now.toTimeString().slice(0, 5); // "21:36"
+    const dayString = now.toISOString().slice(0, 10); // "2025-03-29"
 
     const logItem = document.createElement("li");
-    logItem.textContent = `${dateString} ${timeString}`;
+    logItem.textContent = `${dayString} ${timeString}`;
     logList.prepend(logItem);
 
     // Save to local storage
-    localStorage.setItem("anxietyCount", count);
-    localStorage.setItem("anxietyLog", logList.innerHTML);
+    // localStorage.setItem("anxietyCount", count);
+    // localStorage.setItem("anxietyLog", logList.innerHTML);
+
+    // Send to backend via Axios
+    const userName = localStorage.getItem("loggedInUser");
+    if (userName) {
+        try {
+            await axios.post(
+                "https://desolate-tor-24628-0ba2463868a2.herokuapp.com/anxiety",
+                {
+                    userName,
+                    day: dayString,
+                    time: timeString,
+                }
+            );
+        } catch (error) {
+            console.error("Failed to send anxiety record:", error);
+        }
+    } else {
+        console.warn("User not logged in");
+    }
 
     // Toggle button image (temporary effect)
     trackButton.style.backgroundImage = "url('./images/duck_pressed.png')";
