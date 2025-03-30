@@ -58,5 +58,11 @@ trackButton.addEventListener("click", async () => {
 document.getElementById("logoutBtn").addEventListener("click", () => {
     // For example, remove the token and redirect to the login page
     localStorage.removeItem("loggedInUser");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
+});
+
+document.getElementById("analysisBtn").addEventListener("click", () => {
+    // For example, remove the token and redirect to the login page
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "analysis.html";
 });
