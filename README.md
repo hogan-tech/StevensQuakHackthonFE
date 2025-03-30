@@ -5,7 +5,7 @@ Anxiety Tap Game is a calming, responsive **Progressive Web App (PWA)** that let
 This frontend integrates with a backend API and includes login, registration, offline support, and weekly analytics enhanced by Gemini AI feedback.
 
 > 🔗 **Related Repositories**:
-> - 🌐 [Frontend Repo (This)](https://github.com/hogan-tech/StevensQuakHackthonFE)
+> - 🌐 [Frontend Repo](https://github.com/hogan-tech/StevensQuakHackthonFE)
 > - 🧠 [Backend Repo](https://github.com/hogan-tech/StevensQuakHackthon)
 > - 🌍 [GitHub Pages (Static Deployment)](https://github.com/hogan-tech/hogan-tech.github.io)
 
