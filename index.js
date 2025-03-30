@@ -79,6 +79,5 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 
 document.getElementById("analysisBtn").addEventListener("click", () => {
   // For example, remove the token and redirect to the login page
-  localStorage.removeItem("loggedInUser");
   window.location.href = "analysis.html";
 });
