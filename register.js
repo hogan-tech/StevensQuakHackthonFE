@@ -17,7 +17,7 @@ $(function () {
             })
             .then(function (res) {
                 $("#message")
-                    .text("註冊成功！請前往登入 🦆")
+                    .text("Registration successful! Please log in. ")
                     .css("color", "green");
 
                 setTimeout(function () {
@@ -25,7 +25,7 @@ $(function () {
                 }, 1000);
             })
             .catch(function (err) {
-                const msg = err.response?.data?.error || "註冊失敗，請再試一次。";
+                const msg = err.response?.data?.error || "Registration failed. Please try again.";
                 $("#message").text(msg).css("color", "red");
             });
     });
