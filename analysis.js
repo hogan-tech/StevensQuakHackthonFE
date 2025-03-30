@@ -6,7 +6,7 @@ let conversationHistory = [];
 // const FIXED_DATE = '2025-03-29';
 if (!localStorage.getItem("loggedInUser")) {
     window.location.href = "login.html";
-}
+}window.location.href = "login.html";
 
 const MOCK_INPUT_DATA = [
     { _id: '2025-03-20T13:00:00Z', count: 1 },
