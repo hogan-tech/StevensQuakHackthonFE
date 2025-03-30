@@ -33,16 +33,16 @@ trackButton.addEventListener("click", async function () {
     // localStorage.setItem("anxietyLog", logList.innerHTML);
 
     // Send to backend via Axios
-    const userName = localStorage.getItem("loggedInUser");
-    console.log("userName : " + userName);
+    const user = localStorage.getItem("loggedInUser");
+    console.log("userName : " + user.userName);
     console.log("day : " + dayString);
     console.log("time : " + timeString);
-    if (userName) {
+    if (user.userName) {
         try {
             await axios.post(
                 "https://desolate-tor-24628-0ba2463868a2.herokuapp.com/anxiety",
                 {
-                    userName,
+                    userName: user.userName,
                     day: dayString,
                     time: timeString,
                 }
